@@ -21,24 +21,6 @@ PRODUCT_SOONG_NAMESPACES += $(CUSTOM_PATH)
 # Audios
 $(call inherit-product, $(CUSTOM_PATH)/config/audio.mk)
 
-# Custom Apps
-PRODUCT_PACKAGES += \
-	AndroidDataBackup \
-	CameraGo \
-	GeometricWeather
-
-ifneq ($(ARROW_GAPPS), true)
-ifneq ($(WITH_GMS), true)
-PRODUCT_PACKAGES += \
-	ViaBrowser
-endif
-endif
-
-ifdef $(LINEAGE_BUILD)
-PRODUCT_PACKAGES += \
-	ViaBrowser
-endif
-
 PRODUCT_PACKAGES += \
 	KProfiles
 
